@@ -1,0 +1,139 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "Split",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"northwind": {
+				"uri": "/northwind/V2/northwind/northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "Split.view.View1",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "Split.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "northwind",
+				"settings": {
+					"json": true,
+					"useBatch": false
+				}
+			}
+		},
+		
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "Split.view",
+				"controlId":"SPLIT",
+				"targetAggregation": "detailPages",
+				 "clearTarget": "false",
+				"transition": "slide"
+			
+			},
+			"routes": [{
+				"pattern": "splitApp",
+				"name": "view1",
+				"view":"view1",
+				"target":["master","detail"] 
+			},
+			
+			{
+				"pattern": "detail",
+				"name": "detail",
+				"target": ["master","detail"]
+			}],
+			
+			"targets": {
+				"view1":{
+					"viewName": "View1",
+    				"viewLevel": 1,
+    				"controlId": "SPLIT",
+        			"controlAggregation": "Pages"
+				},
+				"master":{
+					"parent":"view1",
+					"viewName": "Master",
+    				"viewLevel": 2,
+    				"controlId": "SPLIT",
+        			"controlAggregation": "masterPages"
+				},
+				"detail":{
+					"parent":"view1",
+					"viewName": "Detail",
+    				"viewLevel": 3,
+    				"controlId": "SPLIT",
+        			"controlAggregation": "detailPages"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
+	}
+}

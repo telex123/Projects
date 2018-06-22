@@ -1,0 +1,60 @@
+<mvc:View controllerName="Split.controller.View1"
+xmlns:html="http://www.w3.org/1999/xhtml"
+xmlns:mvc="sap.ui.core.mvc"
+displayBlock="true"
+	xmlns="sap.m">
+	<SplitApp id="SPLIT">
+		<detailPages>
+			<Page title="Detail">
+				<content>
+					<Table id="detailtable" items="{/}">
+						<columns>
+						<Column>
+							<Text text="Product name"></Text>
+						</Column>
+						<Column>
+							<Text text="Product ID"></Text>
+						</Column>
+						<Column>
+							<Text text="Unit price"></Text>
+						</Column>
+						<Column>
+							<Text text="Quantity per unit"></Text>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{productname}"></Text>
+							</cells>
+								<cells>
+								<Text text="{productid}"></Text>
+							</cells>
+								<cells>
+								<Text text="{unitprice}"></Text>
+							</cells>
+								<cells>
+								<Text text="{quantity}"></Text>
+							</cells>
+						</ColumnListItem>
+					</items>
+					
+					
+					</Table>
+				</content>
+			</Page>
+		</detailPages>
+		<masterPages>
+			<Page title="master">
+				<List id="masterproducts" items="{/Products}">
+					<items>
+						<StandardListItem title="{ProductName}"
+						
+							type="Active"
+							press="productselect"></StandardListItem>
+					</items>
+				</List>
+			</Page>
+		</masterPages>
+	</SplitApp>
+</mvc:View>

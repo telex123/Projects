@@ -1,0 +1,20 @@
+<View
+	xmlns="sap.m"
+	xmlns:layout="sap.ui.layout"
+	controllerName="Split.controller.Master">
+	<Page
+		title="Master">
+		<content>
+				<!--	<List id="products" -->
+				<!--		items="Product"-->
+				<!--		headerText="Products">-->
+				<!--	<items>-->
+				<!--		<StandardListItem title="Product name" -->
+				<!--			type="Active"-->
+				<!--			press="onSelectionChange"/>-->
+				<!--	</items>-->
+				<!--</List>-->
+					<Text text="hi"></Text>
+		</content>
+	</Page>
+</View>
