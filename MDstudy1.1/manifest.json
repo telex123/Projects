@@ -1,0 +1,131 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "MDstudy",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"northwind": {
+				"uri": "/northwind/V2/northwind/northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": false
+		},
+		"supportedThemes": ["sap_hcb", "sap_belize"]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "MDstudy.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "MDstudy.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "northwind",
+				"settings": {
+					"json": true,
+					"useBatch": false
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "MDstudy.view",
+				"controlId": "splitapp",
+				"targetAggregation": "detailPages",
+				"async": true
+			},
+			"routes": [ {
+				"pattern": "",
+				"name": "master",
+				"target": ["detail", "master"]
+			}, {
+				"pattern": "detail/:invoicePath:/",
+				"name": "detail",
+				"target": ["master", "detail"]
+			},
+			{
+				"pattern": "additionalDetail/:username:/",
+				"name": "additionalDetail",
+				"target": ["master", "additionalDetail"]
+			}],
+			"targets": {
+				
+				"master": {
+					"viewName": "Master",
+					"viewLevel": 0,
+					"viewId": "master",
+					"controlAggregation": "masterPages"
+				},
+				"detail": {
+					"viewName": "Detail",
+					"viewId": "detail",
+					"viewLevel": 1,
+					"controlAggregation": "detailPages"
+				},
+				"additionalDetail": {
+					"viewName": "AdditionalDetail",
+					"viewId": "additionalDetail",
+					"viewLevel": 2,
+					"controlAggregation": "detailPages"
+				}
+			},
+			"resources": {
+				"css": [{
+					"uri": "css/style.css"
+				}]
+			}
+		}
+	}
+}

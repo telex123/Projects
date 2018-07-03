@@ -1,0 +1,14 @@
+<View xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" controllerName="MDstudy.controller.Detail">
+	<Page title="{invoice>i18n>page2}" id="title2">
+		<List mode="SingleSelectMaster" id="detailtable" items="{/}" selectionChange="onSelectionChangedetail">
+			<headerToolbar>
+				<Toolbar>
+					<Title text="Selected user" level="H2"/>
+				</Toolbar>
+			</headerToolbar>
+			<items>
+				<StandardListItem title="{userFirstName}" info="{userCity}" type="Active" description="{userLastName}"/>
+			</items>
+		</List>
+	</Page>
+</View>

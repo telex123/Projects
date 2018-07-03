@@ -1,0 +1,11 @@
+<?xml-stylesheet href="css/style.css" type="text/css"?>
+<View xmlns="sap.m" xmlns:layout="sap.ui.layout" controllerName="MDstudy.controller.Home">
+	<!--<Page id="home">-->
+		
+	<!--</Page>-->
+	<App id="home">
+		<pages>
+
+		</pages>
+	</App>
+</View>
