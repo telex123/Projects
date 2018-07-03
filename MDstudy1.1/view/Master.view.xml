@@ -1,0 +1,23 @@
+<?xml-stylesheet href="css/style.css" type="text/css"?>
+<View xmlns="sap.m" xmlns:layout="sap.ui.layout" controllerName="MDstudy.controller.Master">
+	<Page title="Clients">
+		<List mode="SingleSelectMaster" id="masterList" items="{/Employees}" selectionChange="onSelectionChange">
+			<items>
+				<StandardListItem title="{FirstName}" type="Active" press="onSelectionChange"/>
+			</items>
+		</List>
+		<!--<content>-->
+		<!--			<List id="products" -->
+		<!--				items="Product"-->
+		<!--				headerText="Products">-->
+		<!--			<items>-->
+		<!--				<StandardListItem title="Product name" -->
+		<!--					type="Active"-->
+		<!--					press="onSelectionChange"/>-->
+		<!--			</items>-->
+		<!--		</List>-->
+		<!--			<Text text="hi"></Text>-->
+		<!--			<Button text="Blood for the blood God!!!" press="blood" type="Reject" width="100%" ></Button>-->
+		<!--</content>-->
+	</Page>
+</View>

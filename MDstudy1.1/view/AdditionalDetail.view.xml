@@ -1,0 +1,81 @@
+<View xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" controllerName="MDstudy.controller.AdditionalDetail"
+	xmlns:f="sap.ui.layout.form">
+	<Page title="{invoice>title123}" id="title3" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<f:SimpleForm title="Additional information about user" id="userInfoForm">
+				<f:content>
+					<Label text="User FirstName"/>
+					<Text  id="username" text="{FirstName}"/>
+					<Label text="User LastName"/>
+					<Text  id="usersurname" text="{LastName}"/>
+					<Label text="User Country"/>
+					<Text  id="country" text="{Country}"/>
+					<Label text="User Region"/>
+					<Text  id="region" text="{Region}"/>
+					<Label text="User City"/>
+					<Text id="city" text="{City}"/>
+					<Label text="User Address"/>
+					<Text id="address" text="{Address}"/>
+					<Label text="User Phone"/>
+					<Text id="phone" text="{HomePhone}"/>
+				</f:content>
+			</f:SimpleForm>
+			<Table id="tableInform" items="{/}">
+				<columns>
+					<Column>
+						<Text text="FirstName"></Text>
+					</Column>
+					<Column>
+						<Text text="LastName"></Text>
+					</Column>
+					<Column>
+						<Text text="Country"></Text>
+					</Column>
+					<Column>
+						<Text text="Region"></Text>
+					</Column>
+					<Column>
+						<Text text="City"></Text>
+					</Column>
+					<Column>
+						<Text text="Address"></Text>
+					</Column>
+					<Column>
+						<Text text="Phone"></Text>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{FirstName}"></Text>
+						</cells>
+						<cells>
+							<Text text="{LastName}"></Text>
+						</cells>
+						<cells>
+							<Text text="{Country}"></Text>
+						</cells>
+						<cells>
+							<Text text="{Region}"></Text>
+						</cells>
+						<cells>
+							<Text text="{City}"></Text>
+						</cells>
+						<cells>
+							<Text text="{Address}"></Text>
+						</cells>
+						<cells>
+							<Text text="{HomePhone}"></Text>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<HBox>
+				<Image src="https://images.ttcdn.co/media/products/457939-0c324c98c4bd4463b0e8e828cfac91ac/dogedogedoge/3x-double-doge-with-it-0.png"
+				width="{/imageWidth}"
+				press="sound">
+				</Image>
+			</HBox>
+		</content>
+	</Page>
+</View>
