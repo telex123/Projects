@@ -1,0 +1,22 @@
+<mvc:View controllerName="MultiInput.controller.Home" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core" displayBlock="true" xmlns="sap.m">
+	<App id="app">
+		<pages>
+			<Page title="MultiInput">
+				<content>
+					<MultiInput id="valuehelp1" width="33%" suggestionItems="{/Employees}" startSuggestion="3" showValueHelp="true" tokenChange="test" valueHelpRequest="help"
+						placeholder="Enter Name ...">
+						<suggestionItems>
+							<core:Item text="{FirstName}"/>
+						</suggestionItems>
+					</MultiInput>
+					<!--<ComboBox items="{/Employees}">-->
+					<!--	<items>-->
+					<!--			<core:Item text="{FirstName}"/>-->
+					<!--	</items>-->
+					<!--</ComboBox>-->
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
