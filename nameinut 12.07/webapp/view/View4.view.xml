@@ -1,0 +1,56 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml"
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:core="sap.ui.core" 
+xmlns="sap.m"
+controllerName="nameInput.controller.View4"
+displayBlock="true"
+xmlns:l="sap.ui.layout"
+xmlns:uit="sap.ui.table">
+	<App>
+		<pages>
+			<Page title="Products" class="sapUiResponsiveContentPadding" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<Button text="oouu" press="testik"></Button>
+					<Table id="table4" items="{/Products}">
+						<columns>
+							<Column>
+								<Text text="Product ID"></Text>
+							</Column>
+							<Column>
+								<Text text="Product Name"></Text>
+							</Column>
+							<Column>
+								<Text text="Product Price"></Text>
+							</Column>
+							<Column>
+								<Text text="Product In Stock"></Text>
+							</Column>
+							<Column>
+								<Text text="Product In Order"></Text>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+										<ObjectIdentifier id="productID" text="{ProductID}"></ObjectIdentifier>
+								</cells>
+								<cells>
+										<ObjectIdentifier id="productName" text="{ProductName}"></ObjectIdentifier>
+								</cells>
+								<cells>
+										<ObjectIdentifier id="unitPrice" text="{UnitPrice}"></ObjectIdentifier>
+								</cells>
+								<cells>
+										<ObjectIdentifier id="unitsInStock" text="{UnitsInStock}"></ObjectIdentifier>
+								</cells>
+								<cells>
+										<ObjectIdentifier id="unitsOnOrder" text="{UnitsOnOrder}"></ObjectIdentifier>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

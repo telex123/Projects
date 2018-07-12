@@ -1,0 +1,127 @@
+<mvc:View 
+controllerName="nameInput.controller.View2"
+xmlns:uit="sap.ui.table"
+xmlns:u="sap.ui.unified"
+xmlns="sap.m"
+xmlns:mvc="sap.ui.core.mvc"
+xmlns:core="sap.ui.core">
+	<Page title="{invoice>homePage2}" id="tit2" class="sapUiResponsiveContentPadding" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<Table mode="MultiSelect"  id="table" items="{/value}" >   
+				<headerToolbar>
+					<OverflowToolbar>
+						<content>
+							<!--<ToolbarSpacer></ToolbarSpacer>  -->
+							<Button
+										id="addUserButton"
+										text="Add user"
+										press="onAdd">
+							</Button>
+							
+							<Button
+										id="deleteUserButton"
+										text="Delete"
+										press="onDelete">
+							</Button>
+							
+							
+									
+						</content>
+					</OverflowToolbar>
+				</headerToolbar>
+				
+				<columns>
+							<Column>
+								<Text text="User Name"/>
+							</Column>
+							<Column>
+								<Text text="User surname"/>
+							</Column>
+							<Column>
+								<Text text="User city"/>
+							</Column>
+							<Column>
+								<Text text="User package"/>
+							</Column>
+				</columns>
+				
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Input value="{username}"></Input>
+						</cells>
+						
+						<cells>
+							<Input value="{usersurname}"></Input>
+						</cells>
+						
+						<cells>
+							<Input value="{usercity}"></Input>
+						</cells>
+						
+						<cells>
+							<Input value="{userpackage}"></Input>
+						</cells>
+					</ColumnListItem>
+				</items>
+
+			</Table>
+			<Button text="test" press="test" type="Accept"></Button>
+			<Button text="Show list" press="list" type="Accept"></Button>
+			<Button text="give me all data" press="dataexample"> </Button>
+			<Button id="aaaa" text="give me all oData, please !" press="datatest"> </Button>
+			
+			<ComboBox id="firstread" items="{/values}">
+				<items>
+					<core:Item text="{Color}"/>
+					</items>
+					</ComboBox>
+				
+					<ComboBox id="aaa" placeholder="some product..." items="{/Products}"> 
+						<core:Item text="{ProductName}"/>
+					</ComboBox> 
+					<ComboBox  placeholder="some Employees..." items="{/Employees}"> 
+						<core:Item text="{FirstName}"/>
+					</ComboBox> 
+					
+				<!--<Table>-->
+				<!--	<columns>-->
+				<!--		<Column  ><Label text="User name" />-->
+				<!--		<Input value="djckfj"></Input>-->
+				<!--		</Column>-->
+						
+				<!--		<Column  ><Label text="User surname" />-->
+				<!--		</Column>-->
+						
+				<!--		<Column  ><Label text="User City" />-->
+				<!--		</Column>-->
+						
+				<!--		<Column ><Label text="User package" />-->
+				<!--		</Column>-->
+				<!--	</columns>-->
+				<!--</Table>-->
+				
+				
+			         
+				
+				<!--<ColumnListItem>-->
+				<!--	<cells>-->
+				<!--		<Input value="{UserName}"-->
+				<!--				valueLiveUpdate="true"-->
+				<!--				liveChange="onInputChange">-->
+							
+				<!--		</Input>-->
+				<!--	</cells>-->
+				<!--</ColumnListItem> -->
+				
+				
+				<!--<Columns>-->
+				<!--	<Column id="username">-->
+				<!--		 <Text text="User name"/>-->
+				<!--		 </Column>-->
+				<!--</Columns>-->
+			
+				</content>
+				
+			</Page>
+		</mvc:View>

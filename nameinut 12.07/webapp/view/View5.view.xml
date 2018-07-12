@@ -1,0 +1,48 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+	controllerName="nameInput.controller.View5" displayBlock="true" xmlns:l="sap.ui.layout" xmlns:uit="sap.ui.table">
+	<App id="app">
+		<pages>
+			<Page title="Products List" class="sapUiResponsiveContentPadding" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<!--<List items="{/Products}"  id="liist" >-->
+					<List items="{
+						path:'/Products',
+						sorter:{
+					path:'ProductName', 
+					descending: false,
+    				group: false
+					}
+					}" id="liist">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="Products" level="H2"/>
+								<ToolbarSpacer/>
+								<!--<Button icon="sap-icon://settings" press="handleButtonPress"/>-->
+								<!--<Button icon="sap-icon://person-placeholder" press="handleButtonPress"/>-->
+								<Button icon="sap-icon://download" press="onDataExport" />
+								<Button icon="sap-icon://sort" press="sortButton"/>
+							</Toolbar>
+						</headerToolbar>
+						<items>
+							<ObjectListItem title="{ProductName}" number="{UnitPrice}" numberUnit="EUR">
+								<!--<ObjectStatus>-->
+								<!--</ObjectStatus>-->
+								<attributes>
+									<ObjectAttribute text="Units In Stock: {UnitsInStock} "/>
+									<ObjectAttribute text="Units On Order: {UnitsOnOrder}"/>
+								</attributes>
+								<firstStatus>
+									<ObjectStatus text="{ path:'UnitsInStock', formatter:'.formatter.checkStock'}" state="{ path:'UnitsInStock', formatter:'.formatter.status'}"></ObjectStatus>
+								</firstStatus>
+								<secondStatus>
+									<ObjectStatus text="{ path: 'UnitsOnOrder', formatter:'.formatter.checkOrder'}"
+										state="{ path:'UnitsOnOrder', formatter:'.formatter.status'}"></ObjectStatus>
+								</secondStatus>
+							</ObjectListItem>
+						</items>
+					</List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

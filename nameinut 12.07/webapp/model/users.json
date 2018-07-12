@@ -1,0 +1,27 @@
+{
+	"value": [
+
+		{
+			"username": "serg",
+			"usersurname": "marini",
+			"usercity": "Riga",
+			"userpackage": "History Pack"
+		}, {
+			"username": "rih",
+			"usersurname": "skalk",
+			"usercity": "Riga",
+			"userpackage": "NORM Pack"
+		}, {
+			"username": "alex",
+			"usersurname": "batushka",
+			"usercity": "Riga",
+			"userpackage": "norm Pack"
+		}, {
+			"username": "andry",
+			"usersurname": "kadi",
+			"usercity": "Vjetnam",
+			"userpackage": "Burning Pack"
+		}
+
+	]
+}

@@ -1,0 +1,79 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml"
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:core="sap.ui.core"
+xmlns="sap.m"
+controllerName="nameInput.controller.View3"
+displayBlock="true" xmlns:l="sap.ui.layout"
+xmlns:uit="sap.ui.table">
+	<App id="app">
+		<pages>
+			<Page title="{i18n>title}" class="sapUiResponsiveContentPadding" showNavButton="true"  navButtonPress="onNavBack">
+				<content cellspacing="5">
+					<Text class="testclass" text="Hello its meeeee"></Text>
+				    <Button class="sapUiNoContentPadding"  text="Ajax Request"  id="but1" press="ajaxtest" />
+				    <Button text="Request to Northwind" press="norajax"></Button>
+				    <Button text="Add user with ajax" press="ajaxpost"></Button>
+				    <l:HorizontalLayout>         
+				    <Table id="table2" width="50%" items="{/value1}">
+				    	 <!--items="{/Orders}"-->
+				    	<headerToolbar>
+					<OverflowToolbar>
+						<content>
+							<Button
+										id="addOrders"
+										text="Add Orders"
+										press="onAddord">
+							</Button>
+							
+							<!--<Button-->
+							<!--			id="addCostumers"-->
+							<!--			text="Add Costumers"-->
+							<!--			press="onAddcos">-->
+							<!--</Button>-->
+						</content>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns >
+					<Column >
+						<Text text="OrderID"></Text>
+					</Column>
+					<Column>
+						<Text text="CustomerID"></Text>
+					</Column>
+					<Column>
+						<Text text="EmployeeID"></Text>
+					</Column>
+					<Column>
+						<Text text="OrderDate"></Text>
+					</Column>
+					<Column>
+						<Text text="RequiredDate"></Text>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<ObjectIdentifier  id="orderid" text="{OrderID}"></ObjectIdentifier>
+							<!--<Input value="{OrderID}"></Input>-->
+						</cells>
+							<cells>
+							<ObjectIdentifier id="costumerid" text=""></ObjectIdentifier>
+						</cells>
+							<cells>
+							<ObjectIdentifier id="employeeid" text=""></ObjectIdentifier>
+						</cells>
+							<cells>
+							<ObjectIdentifier id="orderdate" text=""></ObjectIdentifier>
+						</cells>
+							<cells>
+							<ObjectIdentifier id="requireddate" text=""></ObjectIdentifier>
+						</cells>
+					</ColumnListItem>
+				</items>
+				    </Table>
+				    </l:HorizontalLayout>   
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
