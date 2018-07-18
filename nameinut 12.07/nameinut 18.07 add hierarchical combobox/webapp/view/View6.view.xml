@@ -1,0 +1,27 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+	controllerName="nameInput.controller.View6" displayBlock="true" xmlns:l="sap.ui.layout" xmlns:uit="sap.ui.table">
+	<App id="app">
+		<pages>
+			<Page title="New" class="sapUiResponsiveContentPadding" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<ComboBox id="comboPSupplierID" items="{/}" placeholder="Select Supplier ID ..." change="selectID">
+						<core:Item text="{SupplierID}"></core:Item>
+					</ComboBox>
+					<ComboBox change="select" id="suppliersCity" items="{/}" placeholder="Select Supplier City ..." enabled="true">
+						<core:Item text="{City}"></core:Item>
+					</ComboBox>
+					<!--<ComboBox id="custometID" items="{/}" placeholder="Customer ID ...">-->
+					<ComboBox id="custometID" items="{path: '/', sorter: [{path: 'CustomerID', descending: false, duplicates:true}]}"
+						placeholder="Customer ID ...">
+						<items>
+							<core:Item text="{CustomerID}"></core:Item>
+						</items>
+					</ComboBox>
+					<!--<Input>-->
+					<!--	<core:Item id="inputforcity" text=""></core:Item>-->
+					<!--</Input>-->
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
